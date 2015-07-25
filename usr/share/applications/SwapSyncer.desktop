@@ -1,0 +1,8 @@
+[Desktop Entry]
+Name=SwapSyncer
+Comment=SwapSyncer
+TryExec=swapsyncer
+Exec=swapsyncer
+Icon=swapsyncer
+Type=Application
+Categories=Utility;
