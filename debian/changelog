@@ -1,3 +1,9 @@
+swapsyncer (0.1-trusty3) trusty; urgency=medium
+
+  * iconfix
+
+ -- Zen aka Chibiko <zenogears.aka@gmail.com>  Sun, 26 Jul 2015 03:58:05 +0300
+
 swapsyncer (0.1-trusty2) trusty; urgency=medium
 
   * some updates with pythonzenity
