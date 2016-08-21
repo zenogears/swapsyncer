@@ -1,3 +1,9 @@
+swapsyncer (0.1-ubuntu6) trusty; urgency=medium
+
+  * bugfixes
+
+ -- Zen aka Chibiko <zenogears.aka@gmail.com>  Tue, 13 Oct 2015 20:22:27 +0300
+
 swapsyncer (0.1-trusty4) trusty; urgency=medium
 
   * bugfixes
