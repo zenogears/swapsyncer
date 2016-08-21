@@ -26,13 +26,15 @@ conf_dir_path = "/home/" + getpass.getuser() + "/.swapsyncer"
 conf_path = conf_dir_path + "/config.ini"
 log_path = conf_dir_path + "/swapsyncer.log"
 
-dir_path = os.path.abspath(os.path.dirname(sys.argv[0])) 
+dir_path = os.path.abspath(os.path.dirname(sys.argv[0]))
 
 now = datetime.now()
 date = datetime.strftime(datetime.now(), "%Y.%m.%d %H:%M:%S")
 
+out_string = ""
+
 ## Create conf dir if not exist
-if not  os.path.exists(conf_dir_path):
+if not os.path.exists(conf_dir_path):
   os.makedirs(conf_dir_path)
 
 ## create log and conf files if not exist  
@@ -40,7 +42,7 @@ lp = open(log_path, 'a+')
 fp = open(conf_path, 'a+')
 
 ## create conf-file
-if not fp.read():
+if os.stat(conf_path).st_size == 0:
   if (Question(text="Конфиг не найден.\nДиректория SWAP не определена.\nХотите указать директорию под SWAP?")):
     swapdir = GetDirectory(sep=None)
     fp.write(str(swapdir)[2:-2])
@@ -65,8 +67,8 @@ else:
         download_list = list(set(remote_eboots) - set(local_eboots))
         upload_list = list(set(local_eboots) - set(remote_eboots))
 
-        if len(download_list)==0:
-                InfoMessage(text="Нечего скачивать\nКоллекция обновлена")
+        if len(download_list) == 0:
+                out_string += "Нечего скачивать.\n"
         else:
                 lp.write(str(date) + "\n")
                 InfoMessage(text=str(len(download_list)) + " файлов будет скачано")
@@ -85,9 +87,10 @@ else:
                 with open(eboots_path + '/' + fn, 'wb') as fd:
                         fd.write(r.content)
                         fd.close()
-        if len(upload_list)==0:
-                InfoMessage(text="Нечего загружать\nНичего нового")
+        if len(upload_list) == 0:
+                out_string += "Нечего закачивать.\n"
         else:
+                uploaded_files_now = 1
                 InfoMessage(text=str(len(upload_list)) + " файлов будет загружено")
                 testparam = float(100/float(len(upload_list)))
                 update = Progress(text='Uploading...', percentage=0, width=470, auto_close=True)
@@ -104,6 +107,8 @@ else:
                 update(datchik,"Загружаем данные на сервер, подождите... Это может занять длительное время. Загружено: " + str("%.1f" % palka) + " %")
                 r = requests.post(url + "/uploadify.php", files={'Filedata': open(eboots_path + '/' + fn, 'rb')})
         lp.close();
-        if len(upload_list)!=0 or len(download_list)!=0:
+        if len(out_string) > 0:
+            InfoMessage(text=out_string)
+        if len(upload_list)>0 or len(download_list)>0:
           if (Question(text="Желаете посмотреть изменения?")):
             TextInfo(filename=log_path, editable=False, width=400, height=200)

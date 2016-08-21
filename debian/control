@@ -8,6 +8,6 @@ Homepage: http://flant.ru
 
 Package: swapsyncer
 Architecture: all
-Depends: zenity, python
+Depends: zenity, python3 | python2.7
 Description: Simple swapsyncer on python
  
