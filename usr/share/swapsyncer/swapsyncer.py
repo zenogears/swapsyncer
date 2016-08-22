@@ -72,41 +72,42 @@ else:
         else:
                 lp.write(str(date) + "\n")
                 InfoMessage(text=str(len(download_list)) + " файлов будет скачано")
-                testparam = float(100/float(len(download_list)))
-                update = Progress(text='Downloading...', percentage=0,width=470,auto_close=True)
+                #testparam = float(100/float(len(download_list)))
+                #update = Progress(text='Downloading...', percentage=0,width=470,auto_close=True)
         i = 1;
-        palka = 0;
+        #palka = 0;
 
         for fn in download_list:
                 lp.write("D[" + str(i) + "/" + str(len(download_list)) + "]" + fn + "\n")
                 i+=1
-                palka = float(palka) + float(testparam)
-                datchik = int(palka)
-                update(datchik,"Обновляем базу, подождите... Это может занять длительное время. Скачано: " + str("%.1f" % palka) + " %")
+                #palka = float(palka) + float(testparam)
+                #datchik = int(palka)
+                #update(datchik,"Обновляем базу, подождите... Это может занять длительное время. Скачано: {0} %".format(palka))
                 r = requests.get(url + "/SWAP/" + fn)
                 with open(eboots_path + '/' + fn, 'wb') as fd:
                         fd.write(r.content)
                         fd.close()
+
         if len(upload_list) == 0:
                 out_string += "Нечего закачивать.\n"
         else:
-                uploaded_files_now = 1
                 InfoMessage(text=str(len(upload_list)) + " файлов будет загружено")
-                testparam = float(100/float(len(upload_list)))
-                update = Progress(text='Uploading...', percentage=0, width=470, auto_close=True)
+                #testparam = float(100/float(len(upload_list)))
+                #update = Progress(text='Uploading...', percentage=0, width=470, auto_close=True)
                 lp.write(str(date) + "\n")
 
         i = 1;
-        palka = 0;
+        #palka = 0;
 
         for fn in upload_list:
                 lp.write ("U[" + str(i) + "/" + str(len(upload_list)) + "]" + fn + "\n")
-                i+=1
-                palka = float(palka) + float(testparam)
-                datchik = int(palka)
-                update(datchik,"Загружаем данные на сервер, подождите... Это может занять длительное время. Загружено: " + str("%.1f" % palka) + " %")
+                #i+=1
+                #palka = float(palka) + float(testparam)
+                #datchik = int(palka)
+                #update(datchik,"Загружаем данные на сервер, подождите... Это может занять длительное время. Загружено: " + str("%.1f" % palka) + " %")
                 r = requests.post(url + "/uploadify.php", files={'Filedata': open(eboots_path + '/' + fn, 'rb')})
         lp.close();
+
         if len(out_string) > 0:
             InfoMessage(text=out_string)
         if len(upload_list)>0 or len(download_list)>0:
