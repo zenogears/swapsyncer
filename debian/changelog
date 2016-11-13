@@ -1,3 +1,9 @@
+swapsyncer (0.1-ubuntu9) trusty; urgency=medium
+
+  * add progressbar O_o
+
+ -- Zen aka Chibiko <zenogears.aka@gmail.com>  Sun, 13 Nov 2016 15:30:56 +0300
+
 swapsyncer (0.1-ubuntu8) trusty; urgency=medium
 
   * fix some issues
