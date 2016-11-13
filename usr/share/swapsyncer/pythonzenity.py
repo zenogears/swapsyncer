@@ -365,7 +365,7 @@ def Progress(text='', percentage=0, auto_close=False, pulsate=False, **kwargs):
     if percentage:
         args.append('--percentage=%s' % percentage)
     if auto_close:
-        args.append('--auto-close=%s' % auto_close)
+        args.append('--auto-close={0}'.format(auto_close))
     if pulsate:
         args.append('--pulsate=%s' % pulsate)
 
