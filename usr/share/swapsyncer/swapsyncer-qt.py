@@ -87,12 +87,12 @@ class Example(QMainWindow):
             self.upload_list = list(set(self.local_eboots) - set(self.remote_eboots))
             #debug("{0}".format(len(self.download_list),self.download_list))
 
-        openDir = QAction(QIcon('/mnt/Video/debianpack/swapsyncer/usr/share/icons/hicolor/24x24/apps/openx24.png'), 'Open SWAP directory', self)
+        openDir = QAction(QIcon('/usr/share/icons/hicolor/24x24/apps/openx24.png'), 'Open SWAP directory', self)
         openDir.setShortcut('Ctrl+O')
         openDir.setStatusTip('Open SWAP directory')
         openDir.triggered.connect(self.showDialog)
 
-        exitAction = QAction(QIcon('/mnt/Video/debianpack/swapsyncer/usr/share/icons/hicolor/24x24/apps/exitx24.png'), 'Exit', self)
+        exitAction = QAction(QIcon('/usr/share/icons/hicolor/24x24/apps/exitx24.png'), 'Exit', self)
         exitAction.setShortcut('Ctrl+Q')
         exitAction.setStatusTip('Exit')
         exitAction.triggered.connect(qApp.quit)
@@ -149,18 +149,18 @@ class Example(QMainWindow):
             self.lbl1.resize(400, 15)
 
         self.setGeometry(300, 300, 350, 240)
-        self.setWindowTitle('ToolBar')
+        self.setWindowTitle('SwapSyncer')
         self.show()
 
 
     def showDialog(self):
 
-        self.eboots_path = QFileDialog.getExistingDirectory(self, 'Open directory', '/home')
+        self.eboots_path = QFileDialog.getExistingDirectory(self, 'Open SWAP directory', '/home')
         if self.eboots_path:
             with open(conf_path, 'w') as fp:
                 fp.write(str(self.eboots_path))
                 #debug(self.eboots_path)
-            sys.exit()
+            sys.exit(app.exec_())
 
     def doActionDownload(self):
         if self.download_list is not None and len(self.download_list) > 0:

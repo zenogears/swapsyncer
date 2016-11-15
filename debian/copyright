@@ -1,18 +1,18 @@
 This work was packaged for Debian by:
 
-    Oleg Asonov <oleg.asonov@flant.ru> on Tue, 21 Nov 2014 12:50:53 +0400
+    Zen aka Chibiko <zenogears.aka@gmail.com> on Tue, 21 Nov 2014 12:50:53 +0400
 
 It was downloaded from:
 
-    http://flant.ru
+    http://chibiko.noip.me
 
 Upstream Author(s):
 
-    Oleg Asonov <oleg.asonov@flant.ru>
+    Zen aka Chibiko <zenogears.aka@gmail.com>
 
 Copyright:
 
-    Copyright (C) 2014 Oleg Asonov
+    Copyright (C) 2014 Zen aka Chibiko
 
 License:
 
@@ -34,7 +34,7 @@ Public License version 3 can be found in "/usr/share/common-licenses/GPL-3".
 
 The Debian packaging is:
 
-    Copyright (C) 2012 Oleg Asonov <oleg.asonov@flant.ru>
+    Copyright (C) 2012 OZen aka Chibiko <zenogears.aka@gmail.com>
 
 and is licensed under the GPL version 3, see above.
 

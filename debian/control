@@ -4,10 +4,10 @@ Priority: extra
 Maintainer: Oleg Asonov <oleg.asonov@flant.ru>
 Build-Depends: debhelper (>= 5)
 Standards-Version: 3.8.4
-Homepage: http://flant.ru
+Homepage: http://chibiko.noip.me
 
 Package: swapsyncer
 Architecture: all
-Depends: zenity, python3 | python2.7
-Description: Simple swapsyncer on python
+Depends: zenity, python3, python3-pyqt5
+Description: Simple swapsyncer for PlayStation 3 SWAP files on python
  

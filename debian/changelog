@@ -1,3 +1,9 @@
+swapsyncer (0.1-ubuntu10) trusty; urgency=medium
+
+  * change pyzenity to pyQt5; some bugs is here!
+
+ -- SBT-Asonov-OV <sbt-asonov-ov@lin-361521aov.sigma.sbrf.ru>  Tue, 15 Nov 2016 13:40:11 +0300
+
 swapsyncer (0.1-ubuntu9) trusty; urgency=medium
 
   * add progressbar O_o
