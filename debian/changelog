@@ -1,3 +1,9 @@
+swapsyncer (0.1-ubuntu12) trusty; urgency=medium
+
+  * add new site for sync = http://hacktech.xyz/swap/
+
+ -- Zen aka Chibiko <zenogears.aka@gmail.com>  Mon, 06 Feb 2017 23:29:18 +0300
+
 swapsyncer (0.1-ubuntu11) trusty; urgency=medium
 
   * fix bugs

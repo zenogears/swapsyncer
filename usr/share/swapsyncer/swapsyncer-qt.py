@@ -25,7 +25,7 @@ def debug(anything):
         print(anything)
 
 ##Site
-url = "http://swapbase.ru/"
+url = "http://hacktech.xyz/swap/"
 
 conf_dir_path = "/home/" + getpass.getuser() + "/.swapsyncer"
 debug("Config directory path: {0}".format(conf_dir_path))
